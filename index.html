@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>Sady Playz | Official Website</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--bg:#090909;--panel:#141414;--red:#ed1735;--text:#f5f5f5;--muted:#aaa;--border:#303030}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px Arial,sans-serif;line-height:1.6}
+a{color:inherit}button,input,select,textarea{font:inherit}
+header{position:sticky;top:0;z-index:5;background:#101010f5;border-bottom:1px solid var(--border);padding:17px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{color:var(--red);font-weight:900;font-size:22px;letter-spacing:2px}
+nav{display:flex;gap:15px;flex-wrap:wrap}nav a{text-decoration:none;color:#ddd;font-size:13px}nav a:hover{color:var(--red)}
+.hero{padding:100px 8%;min-height:65vh;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 85% 15%,#520b19,transparent 45%),#090909}
+.eyebrow,.tag{color:var(--red);font-size:12px;letter-spacing:3px;font-weight:bold}
+h1{font-size:clamp(43px,8vw,82px);line-height:1.04;margin:18px 0}
+h2{font-size:clamp(27px,4vw,39px);margin:8px 0 15px}
+.red{color:var(--red)}.muted{color:var(--muted)}
+.hero p{max-width:620px;color:#bbb}
+section{padding:65px 8%;scroll-margin-top:75px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:24px}
+.card,.panel{background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:23px;min-width:0}
+.card h3{margin-top:5px}.card p{color:var(--muted)}
+.btn{display:inline-block;border:1px solid var(--red);background:var(--red);color:white;padding:11px 17px;border-radius:5px;text-decoration:none;cursor:pointer;font-weight:bold;font-size:13px}
+.btn:hover{filter:brightness(.85)}.btn.alt{background:transparent;border-color:#444}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+form{display:grid;gap:13px;margin-top:15px}
+label{font-size:13px;color:#ddd;display:grid;gap:6px}
+input,select,textarea{width:100%;padding:12px;background:#090909;color:white;border:1px solid #383838;border-radius:5px}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--red)}
+hr{border:0;border-top:1px solid var(--border);margin:20px 0}
+.ticket{padding:17px 0;border-bottom:1px solid var(--border)}
+.ticket:last-child{border:0}
+.ticket p{white-space:pre-wrap;overflow-wrap:anywhere;color:#bbb}
+.status{display:inline-block;padding:3px 8px;border:1px solid #555;border-radius:20px;font-size:11px}
+.hidden{display:none!important}
+.notice{padding:12px;background:#191919;border-left:3px solid var(--red);margin:15px 0;overflow-wrap:anywhere}
+footer{text-align:center;padding:25px;color:#999;border-top:1px solid var(--border)}
+.small{font-size:12px;color:#999}
+@media(max-width:600px){header{padding:14px 5%}.hero{padding:70px 6%}section{padding:48px 6%}nav{gap:10px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home" style="text-decoration:none">SADY PLAYZ.</a>
+  <nav>
+    <a href="#about">About</a><a href="#smp">SAD SMP</a>
+    <a href="#projects">Projects</a><a href="#community">Discord</a>
+    <a href="#support">Support</a><a href="#account">Account</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="eyebrow">GAMING · DEVELOPMENT · COMMUNITY</div>
+  <h1>WELCOME TO<br><span class="red">SADY PLAYZ.</span></h1>
+  <p>Minecraft, gaming projects, SAD SMP Season 3, and a community built by gamers.</p>
+  <div class="actions">
+    <a class="btn" href="#projects">Explore Projects</a>
+    <a class="btn alt" href="https://discord.gg/rmMWX8F9T" target="_blank" rel="noopener">My Discord</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="tag">ABOUT ME</div><h2>THE PERSON BEHIND <span class="red">THE SCREEN</span></h2>
+  <p class="muted">I'm Sady, a gamer and creator interested in Minecraft, server projects, gaming content, and online communities.</p>
+</section>
+
+<section id="smp">
+  <div class="tag">MINECRAFT COMMUNITY</div><h2><span class="red">SAD SMP</span> SEASON 3</h2>
+  <div class="cards">
+    <article class="card"><h3>SAD SMP S3</h3><p>Survival, PvP, community events, and server updates.</p>
+      <a class="btn" href="https://discord.gg/EKxZDrNUJ" target="_blank" rel="noopener">SAD SMP Discord</a></article>
+    <article class="card"><h3>Community</h3><p>Join my Discord to connect and see my updates.</p>
+      <a class="btn alt" href="https://discord.gg/rmMWX8F9T" target="_blank" rel="noopener">My Discord</a></article>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="tag">WHAT I'M BUILDING</div><h2>MY <span class="red">PROJECTS</span></h2>
+  <div class="cards">
+    <article class="card"><div class="tag">MINECRAFT BOT</div><h3>24/7 SMP AFK Bot</h3><p>My Minecraft bot project. Visit the repository for its source code and setup instructions.</p>
+      <a class="btn" href="https://github.com/sadyplayzgrand3-lgtm/24-7-bot-for-smps" target="_blank" rel="noopener">View on GitHub ↗</a></article>
+    <article class="card"><div class="tag">MINECRAFT</div><h3>Server Projects</h3><p>Server experiments, gameplay ideas, and community features.</p><a class="btn alt" href="#smp">Explore SAD SMP</a></article>
+    <article class="card"><div class="tag">CREATIVE</div><h3>Gaming Content</h3><p>Gaming edits, videos, music, and creative projects.</p><a class="btn alt" href="#community">Connect</a></article>
+  </div>
+</section>
+
+<section id="community">
+  <div class="tag">STAY CONNECTED</div><h2>JOIN THE <span class="red">COMMUNITY</span></h2>
+  <div class="actions">
+    <a class="btn" href="https://discord.gg/rmMWX8F9T" target="_blank" rel="noopener">My Discord</a>
+    <a class="btn alt" href="https://discord.gg/EKxZDrNUJ" target="_blank" rel="noopener">SAD SMP S3 Discord</a>
+  </div>
+</section>
+
+<section id="account">
+  <div class="tag">YOUR ACCOUNT</div><h2>LOGIN <span class="red">/ REGISTER</span></h2>
+  <p class="muted">Sign in to submit reports and see your private tickets.</p>
+  <div class="panel">
+    <div id="authArea">
+      <div class="actions">
+        <button class="btn" id="showLogin" type="button">Login</button>
+        <button class="btn alt" id="showSignup" type="button">Create account</button>
+      </div>
+      <form id="authForm">
+        <label>Email<input id="email" type="email" autocomplete="email" required maxlength="254"></label>
+        <label>Password<input id="password" type="password" minlength="8" autocomplete="current-password" required></label>
+        <button class="btn" id="authSubmit" type="submit">Login</button>
+      </form>
+    </div>
+    <div id="userArea" class="hidden">
+      <p id="userInfo"></p>
+      <div class="actions"><button class="btn alt" id="logout" type="button">Log out</button></div>
+    </div>
+    <p id="authMessage" class="notice hidden" role="status"></p>
+  </div>
+</section>
+
+<section id="support">
+  <div class="tag">REPORTS & HELP</div><h2>SUPPORT <span class="red">CENTER</span></h2>
+  <p class="muted">Sign in to submit an issue. Your tickets are private to you and authorized staff.</p>
+
+  <div id="reportArea" class="panel hidden">
+    <h3>Submit a ticket</h3>
+    <form id="ticketForm">
+      <label>Report type
+        <select id="category" required>
+          <option value="Bug Report">Bug report</option>
+          <option value="Player Report">Player report</option>
+          <option value="Hacker / Cheating Report">Hacker / cheating report</option>
+          <option value="Ban Appeal">Ban appeal</option>
+          <option value="Staff Complaint">Staff complaint</option>
+          <option value="Suggestion">Suggestion</option>
+          <option value="Question">Question</option>
+          <option value="Other Issue">Other issue / complaint</option>
+        </select>
+      </label>
+      <label>Subject<input id="subject" maxlength="120" required placeholder="Briefly describe the issue"></label>
+      <label>Description<textarea id="description" maxlength="5000" required placeholder="Include useful details, player names, and what happened"></textarea></label>
+      <label>Evidence attachment (optional; maximum 5 MB)
+        <input id="evidence" type="file" accept="image/png,image/jpeg,image/webp,text/plain,application/pdf">
+      </label>
+      <p class="small">Only upload evidence you are allowed to share. Do not upload passwords or sensitive personal information.</p>
+      <button class="btn" id="ticketSubmit" type="submit">Submit ticket</button>
+    </form>
+    <p id="ticketMessage" class="notice hidden" role="status"></p>
+  </div>
+
+  <div id="signedOutNotice" class="notice">Please log in above to create and view your tickets.</div>
+
+  <div class="panel" style="margin-top:20px">
+    <h3 id="ticketHeading">My tickets</h3>
+    <div id="ticketList"><p class="muted">Log in to view your tickets.</p></div>
+  </div>
+
+  <div id="staffArea" class="panel hidden" style="margin-top:20px">
+    <div class="tag">AUTHORIZED STAFF ONLY</div>
+    <h2>STAFF <span class="red">DASHBOARD</span></h2>
+    <p class="muted">Review tickets and update their status.</p>
+    <div id="staffList"></div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 <span class="red">Sady Playz</span>. Built for gaming and community.</footer>
+
+<script>
+/* Add your Supabase project URL and PUBLIC anon/publishable key here.
+   Never put a service_role key or database password in this file. */
+const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL";
+const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_ANON_KEY";
+
+let db = null;
+let currentUser = null;
+let currentProfile = null;
+let authMode = "login";
+
+const $ = id => document.getElementById(id);
+const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
+
+function message(id, text) {
+  $(id).textContent = text;
+  $(id).classList.remove("hidden");
+}
+function clearMessage(id) {
+  $(id).textContent = "";
+  $(id).classList.add("hidden");
+}
+function isStaff() {
+  return currentProfile && ["helper","moderator","admin","owner"].includes(currentProfile.role);
+}
+function setAuthMode(mode) {
+  authMode = mode;
+  $("authSubmit").textContent = mode === "login" ? "Login" : "Create account";
+  $("password").autocomplete = mode === "login" ? "current-password" : "new-password";
+  clearMessage("authMessage");
+}
+$("showLogin").onclick = () => setAuthMode("login");
+$("showSignup").onclick = () => setAuthMode("signup");
+
+function statusMarkup(status) {
+  return '<span class="status">' + escapeHTML(status) + '</span>';
+}
+
+async function signedEvidence(path) {
+  if (!path) return "";
+  const {data, error} = await db.storage.from("ticket-evidence").createSignedUrl(path, 900);
+  if (error || !data?.signedUrl) return "";
+  return data.signedUrl;
+}
+
+function ticketMarkup(ticket, staffMode) {
+  const statusOptions = ["Open","In Progress","Resolved","Rejected"];
+  return `<article class="ticket" data-ticket="${escapeHTML(ticket.id)}">
+    <p><strong>${escapeHTML(ticket.subject)}</strong></p>
+    <p class="small">Ticket #${escapeHTML(ticket.id)} · ${escapeHTML(ticket.category)} · ${escapeHTML(new Date(ticket.created_at).toLocaleString())}</p>
+    ${staffMode ? `<p class="small">Submitted by: ${escapeHTML(ticket.user_id)}</p>` : ""}
+    <p>${escapeHTML(ticket.description)}</p>
+    <p>Status: ${statusMarkup(ticket.status)}</p>
+    <div class="evidence"></div>
+    ${staffMode ? `<label>Update status
+      <select class="newStatus">${statusOptions.map(s => `<option ${s===ticket.status?"selected":""}>${s}</option>`).join("")}</select>
+    </label><button type="button" class="btn updateStatus">Save status</button><p class="small updateMessage"></p>` : ""}
+  </article>`;
+}
+
+async function attachEvidenceLinks(container, tickets) {
+  const nodes = container.querySelectorAll(".ticket");
+  for (let i=0; i<nodes.length; i++) {
+    const ticket = tickets[i];
+    if (!ticket?.evidence_path) continue;
+    const url = await signedEvidence(ticket.evidence_path);
+    if (url) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = "Open private evidence (link expires in 15 minutes)";
+      a.className = "btn alt";
+      nodes[i].querySelector(".evidence").appendChild(a);
+    }
+  }
+}
+
+async function loadTickets() {
+  if (!currentUser || !db) return;
+  $("ticketHeading").textContent = isStaff() ? "All tickets" : "My tickets";
+  $("ticketList").innerHTML = '<p class="muted">Loading tickets…</p>';
+  let query = db.from("tickets").select("*").order("created_at",{ascending:false}).limit(100);
+  if (!isStaff()) query = query.eq("user_id",currentUser.id);
+  const {data,error} = await query;
+  if (error) {
+    $("ticketList").textContent = "Could not load tickets: " + error.message;
+    return;
+  }
+  const tickets = data || [];
+  if (!tickets.length) {
+    $("ticketList").innerHTML = '<p class="muted">No tickets yet.</p>';
+  } else {
+    $("ticketList").innerHTML = tickets.map(t => ticketMarkup(t,false)).join("");
+    await attachEvidenceLinks($("ticketList"),tickets);
+  }
+
+  $("staffArea").classList.toggle("hidden",!isStaff());
+  if (!isStaff()) return;
+  $("staffList").innerHTML = tickets.map(t => ticketMarkup(t,true)).join("") || '<p>No tickets found.</p>';
+  await attachEvidenceLinks($("staffList"),tickets);
+
+  $("staffList").querySelectorAll(".updateStatus").forEach(button => {
+    button.onclick = async () => {
+      const node = button.closest(".ticket");
+      const id = node.dataset.ticket;
+      const status = node.querySelector(".newStatus").value;
+      button.disabled = true;
+      const {error} = await db.from("tickets").update({status}).eq("id",id);
+      node.querySelector(".updateMessage").textContent = error ? error.message : "Status updated.";
+      button.disabled = false;
+      if (!error) await loadTickets();
+    };
+  });
+}
+
+async function refreshSession(session) {
+  currentUser = session?.user || null;
+  currentProfile = null;
+  if (currentUser) {
+    const {data,error} = await db.from("profiles").select("role").eq("id",currentUser.id).single();
+    if (error) console.error("Profile load:",error.message);
+    currentProfile = data || {role:"player"};
+  }
+  const loggedIn = !!currentUser;
+  $("authArea").classList.toggle("hidden",loggedIn);
+  $("userArea").classList.toggle("hidden",!loggedIn);
+  $("reportArea").classList.toggle("hidden",!loggedIn);
+  $("signedOutNotice").classList.toggle("hidden",loggedIn);
+  $("userInfo").textContent = loggedIn
+    ? `Signed in as ${currentUser.email} · Role: ${currentProfile.role}`
+    : "";
+  if (loggedIn) await loadTickets();
+  else {
+    $("ticketHeading").textContent = "My tickets";
+    $("ticketList").textContent = "Log in to view your tickets.";
+    $("staffArea").classList.add("hidden");
+  }
+}
+
+$("authForm").addEventListener("submit",async event=>{
+  event.preventDefault();
+  clearMessage("authMessage");
+  if (!db) return message("authMessage","Add your Supabase project URL and public key first.");
+  const email = $("email").value.trim();
+  const password = $("password").value;
+  $("authSubmit").disabled = true;
+  try {
+    if (authMode === "login") {
+      const {error} = await db.auth.signInWithPassword({email,password});
+      if (error) throw error;
+      message("authMessage","Login successful.");
+    } else {
+      const {data,error} = await db.auth.signUp({email,password});
+      if (error) throw error;
+      message("authMessage",data.session
+        ? "Account created successfully."
+        : "Account created. Check your email to confirm it, then log in.");
+    }
+  } catch(error) {
+    message("authMessage",error.message || "Authentication failed.");
+  } finally {
+    $("authSubmit").disabled = false;
+  }
+});
+
+$("logout").onclick = async () => {
+  const {error} = await db.auth.signOut();
+  if (error) message("authMessage",error.message);
+};
+
+$("ticketForm").addEventListener("submit",async event=>{
+  event.preventDefault();
+  clearMessage("ticketMessage");
+  if (!currentUser) return message("ticketMessage","Please log in first.");
+  const subject = $("subject").value.trim();
+  const description = $("description").value.trim();
+  if (!subject || !description) return message("ticketMessage","Enter a subject and description.");
+  const file = $("evidence").files[0];
+  if (file && file.size > 5*1024*1024) return message("ticketMessage","Evidence must be 5 MB or smaller.");
+  const allowed = ["image/png","image/jpeg","image/webp","text/plain","application/pdf"];
+  if (file && !allowed.includes(file.type)) return message("ticketMessage","Unsupported evidence file type.");
+  $("ticketSubmit").disabled = true;
+  let evidencePath = null;
+  try {
+    if (file) {
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g,"_").slice(-100);
+      evidencePath = `${currentUser.id}/${Date.now()}_${safeName}`;
+      const {error} = await db.storage.from("ticket-evidence").upload(evidencePath,file,{upsert:false});
+      if (error) throw error;
+    }
+    const {data,error} = await db.from("tickets").insert({
+      user_id:currentUser.id,
+      category:$("category").value,
+      subject,
+      description,
+      evidence_path:evidencePath
+    }).select("id").single();
+    if (error) throw error;
+    $("ticketForm").reset();
+    message("ticketMessage",`Ticket submitted successfully! Your ticket ID is ${data.id}.`);
+    await loadTickets();
+  } catch(error) {
+    message("ticketMessage","Could not submit ticket: "+(error.message || "Unknown error"));
+  } finally {
+    $("ticketSubmit").disabled = false;
+  }
+});
+
+(async function init(){
+  if (SUPABASE_URL.startsWith("PASTE_") || SUPABASE_ANON_KEY.startsWith("PASTE_")) {
+    message("authMessage","Setup required: add your Supabase URL and public anon/publishable key in the code.");
+    return;
+  }
+  try {
+    db = window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+    const {data,error} = await db.auth.getSession();
+    if (error) throw error;
+    await refreshSession(data.session);
+    db.auth.onAuthStateChange((_event,session)=>{
+      setTimeout(()=>refreshSession(session),0);
+    });
+  } catch(error) {
+    message("authMessage","Supabase setup error: "+error.message);
+  }
+})();
+</script>
+</body>
+</html>
